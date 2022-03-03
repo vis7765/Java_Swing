@@ -11,12 +11,13 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class LoginPage {
 
 	private JFrame frame;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -61,11 +62,6 @@ public class LoginPage {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(205, 165, 223, 39);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
 		JLabel lblNewLabel_1 = new JLabel("Username");
 		lblNewLabel_1.setFont(new Font("ZemkeHandITC TT", Font.BOLD | Font.ITALIC, 17));
 		lblNewLabel_1.setBounds(64, 114, 108, 28);
@@ -80,10 +76,10 @@ public class LoginPage {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String user  = textField.getText();
-				String pass = textField_1.getText();
+				String pass = passwordField.getText();
 				if(user.equals("vis7765") && pass.equals("Vishal07@")){
 					textField.setText("");
-					textField_1.setText("");
+					passwordField.setText("");
 					//user = "";
 					//pass = "";
 						JOptionPane.showMessageDialog(null, "Welcome");
@@ -91,7 +87,7 @@ public class LoginPage {
 			}
 				else {
 					textField.setText("");
-					textField_1.setText("");
+					passwordField.setText("");
 					JOptionPane.showMessageDialog(null, "Wrong Input");
 					//user = "";
 					//pass = "";
@@ -102,5 +98,9 @@ public class LoginPage {
 		btnNewButton.setFont(new Font("ZemkeHandITC TT", Font.BOLD | Font.ITALIC, 17));
 		btnNewButton.setBounds(228, 278, 151, 39);
 		frame.getContentPane().add(btnNewButton);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(205, 174, 223, 30);
+		frame.getContentPane().add(passwordField);
 	}
 }
